@@ -91,6 +91,18 @@ The Windows executable is automatically built and released through GitHub Action
    - Creating a single-file executable
    - Creating a GitHub release
 
+#### Current Build Status
+
+As of the latest update, the Windows build is still in progress. You can track the build status at:
+- GitHub Actions: https://github.com/HectorCorbellini/CodeProcessor/actions
+
+If you encounter any issues with the Windows build, please check:
+1. The GitHub Actions logs for detailed error messages
+2. The project's issue tracker for known build issues
+3. The project's documentation for build requirements
+
+We are actively working on resolving any build issues and will update this section once the build is successfully completed.
+
 ### Manual Linux Build
 
 1. Install PyInstaller:
