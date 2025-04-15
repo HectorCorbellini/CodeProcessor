@@ -1,0 +1,3 @@
+pyperclip
+tkinterdnd2
+customtkinter
