@@ -93,15 +93,31 @@ The Windows executable is automatically built and released through GitHub Action
 
 #### Current Build Status
 
-As of the latest update, the Windows build is still in progress. You can track the build status at:
+As of the latest update, the Windows build through GitHub Actions is experiencing some issues. We're working to resolve these, but in the meantime, there are alternative methods to run the application on Windows:
+
+1. **Run from source code**:
+   - Install Python 3.11.2 or higher on Windows
+   - Clone or download this repository
+   - Create a virtual environment: `python -m venv venv`
+   - Activate it: `venv\Scripts\activate`
+   - Install dependencies: `pip install -r requirements.txt`
+   - Run the application: `python main.py`
+
+2. **Use Wine on Linux to run Windows applications**:
+   - If you're on Linux and want to run Windows applications, you can use Wine or PlayOnLinux
+   - Install Wine: `sudo apt-get install wine` or equivalent for your distribution
+   - Install PlayOnLinux: `sudo apt-get install playonlinux`
+   - Once the Windows executable is available, you can run it through Wine
+
+3. **Manual Windows build**:
+   - If you need to build the Windows executable yourself:
+   - Follow the "Run from source code" steps above
+   - Install PyInstaller: `pip install pyinstaller`
+   - Create the executable: `pyinstaller --onefile --windowed --name CodeProcessor main.py`
+   - The executable will be in the `dist` directory
+
+You can track the official build status at:
 - GitHub Actions: https://github.com/HectorCorbellini/CodeProcessor/actions
-
-If you encounter any issues with the Windows build, please check:
-1. The GitHub Actions logs for detailed error messages
-2. The project's issue tracker for known build issues
-3. The project's documentation for build requirements
-
-We are actively working on resolving any build issues and will update this section once the build is successfully completed.
 
 ### Manual Linux Build
 
@@ -138,13 +154,57 @@ We are actively working on resolving any build issues and will update this secti
 
 ### Windows
 
-1. Download the Windows executable from:
+#### Option 1: Using the Windows Installer (Recommended)
+
+1. Download the latest Windows distribution from:
    - GitHub Releases: https://github.com/HectorCorbellini/CodeProcessor/releases
-   - GitHub Actions Artifacts: https://github.com/HectorCorbellini/CodeProcessor/actions
-2. Extract the downloaded zip file
+   - Or directly from the project repository: [CodeProcessor_Windows.zip](https://github.com/HectorCorbellini/CodeProcessor/blob/main/CodeProcessor_Windows.zip)
+2. Extract the ZIP file to your desired location
+3. Open a command prompt as administrator and navigate to the extracted folder
+4. Run the installer:
+   ```cmd
+   install_codeprocessor.bat
+   ```
+5. The installer will:
+   - Check if Python is installed (installs Python 3.11 if needed)
+   - Create a proper installation directory
+   - Set up a virtual environment
+   - Install all required dependencies
+   - Create a desktop shortcut
+6. Once installation is complete, you can:
+   - Click the desktop shortcut to launch the application
+   - Or run `run_codeprocessor.bat` from the installation directory
+
+#### Option 2: Manual Installation
+
+If you prefer not to use the installer, you can install manually:
+
+1. Install Python 3.11.2 or higher from: https://www.python.org/downloads/
+2. Download the Windows distribution ZIP file and extract it
+3. Open a command prompt in the extracted directory
+4. Create and activate a virtual environment:
+   ```cmd
+   python -m venv venv
+   venv\Scripts\activate
+   ```
+5. Install dependencies:
+   ```cmd
+   pip install -r requirements.txt
+   ```
+6. Run the application:
+   ```cmd
+   run_codeprocessor.bat
+   ```
+
+#### Option 3: Using the Standalone Executable
+
+If you prefer to use the standalone executable:
+
+1. Download the Windows distribution ZIP file
+2. Extract it to your desired location
 3. Double-click `CodeProcessor.exe` to launch the application
-4. The application works the same way as the Linux/MacOS version
-6. Optionally, **save the formatted code** to a text file
+
+Note: The standalone executable requires Python to be installed on your system, but it doesn't require a virtual environment.
 
 ## 📁 Project Structure
 

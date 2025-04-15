@@ -1,0 +1,10 @@
+customtkinter==5.2.2
+pillow==10.2.0
+pyinstaller==6.2.0
+PyQt5==5.15.9
+PyQt5-sip==12.14.1
+PyQtWebEngine==5.15.9
+python-dotenv==1.0.0
+requests==2.31.0
+setuptools==68.2.2
+wheel==0.42.0
